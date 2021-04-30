@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>CRUD-Example</title>
+    <link rel="stylesheet" href="{% static 'enroll/css/bootstrap.css' %}">
+  </head>
+  <body>
+    <form class="" action="" method="post">
+
+
+    <div class="container mt-5">
+      <h2 class="text-center alert alert-danger">CRUD Project</h2>
+      {% block content %}
+
+      <div class="row" >
+      <div class="col-sm-4 offset-4">
+      <h4 class="text-center alert alert-info" >Add New Record</h4>
+      <form action="" method="POST">
+      {% csrf_token %}
+      {{form.as_p}}
+      <input type="Submit" class="btn btn-success"  value="Submit">
+       <a href="{% url 'showdata'%}" class="btn btn-info">Show Student Information</a>
+
+
+
+      </div>
+
+    </form>
+      {% endblock content %}
+    </div>
+    <script src="{% static 'enroll/js/jquery.js' %}"></script>
+    <script src="{% static 'enroll/js/bootstrap.js' %}"></script>
+    <script src="{% static 'enroll/js/popper.js' %}"></script>
+
+  </body>
+</html>
